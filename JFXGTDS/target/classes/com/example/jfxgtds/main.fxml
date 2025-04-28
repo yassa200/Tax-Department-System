@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="376.0" prefWidth="394.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.jfxgtds.Controller">
+<!--    <padding>-->
+<!--        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />-->
+<!--    </padding>-->
+
+<!--    <Label fx:id="welcomeText" />-->
+<!--    <Button onAction="#onHelloButtonClick" text="Hello!" />-->
+<!--   <Button onAction="#onHelloButtonClickForTest" text="Test " />-->
+
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="File Path:"/>
+        <TextField fx:id="filePathField" prefWidth="400"/>
+        <Button text="Browse" onAction="#browseFile"/>
+        <Button text="Import Transactions" onAction="#importTransactions"/>
+    </HBox>
+
+    <TableView fx:id="table" prefHeight="400" prefWidth="800">
+        <columns>
+            <TableColumn fx:id="itemCodeCol" text="Item Code"/>
+            <TableColumn fx:id="internalPriceCol" text="Internal Price"/>
+            <TableColumn fx:id="discountCol" text="Discount"/>
+            <TableColumn fx:id="salePriceCol" text="Sale Price"/>
+            <TableColumn fx:id="quantityCol" text="Quantity"/>
+            <TableColumn fx:id="checksumCol" text="Checksum"/>
+            <TableColumn fx:id="profitCol" text="Profit"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Validate Transactions" onAction="#validateTransactions"/>
+        <Button text="Calculate Profit" onAction="#calculateProfit"/>
+        <Button text="Delete Zero Profit Records" onAction="#deleteZeroProfit"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Tax Rate (%):"/>
+        <TextField fx:id="taxRateField" prefWidth="100"/>
+        <Button text="Calculate Final Tax" onAction="#calculateFinalTax"/>
+    </HBox>
+
+    <Label fx:id="summaryLabel" text="Summary will be displayed here." wrapText="true"/>
+</VBox>
